@@ -1,0 +1,13 @@
+#!powershell
+# <license>
+
+# WANT_JSON
+# POWERSHELL_COMMON
+
+# code goes here, reading in stdin as JSON and outputting JSON
+""
+"Date / Format   YYYYMMDD        DD-MM-YYYY        MM/DD/YYYY"
+"============================================================"
+"Yesterday       " + (get-date (get-date).AddDays(-1) -uformat %Y%m%d) + "        " + (get-date (get-date).AddDays(-1) -uformat %d-%m-%Y) + "        " + (get-date (get-date).AddDays(-1) -uformat %m/%d/%Y)
+"Today           " + (get-date -uformat %Y%m%d)                        + "        " + (get-date (get-date)             -uformat %d-%m-%Y) + "        " + (get-date (get-date)             -uformat %m/%d/%Y)
+"Tomorrow        " + (get-date (get-date).AddDays(1)  -uformat %Y%m%d) + "        " + (get-date (get-date).AddDays(1)  -uformat %d-%m-%Y) + "        " + (get-date (get-date).AddDays(1)  -uformat %m/%d/%Y)

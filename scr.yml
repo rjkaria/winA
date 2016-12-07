@@ -1,0 +1,7 @@
+- name: Test script capability
+  hosts: windows
+  tasks:
+    - name: Run a random script
+      script: today.ps1
+      register: today
+    - debug: var=today.stdout_lines
